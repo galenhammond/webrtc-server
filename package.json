@@ -1,0 +1,10 @@
+{
+	"name": "webrtc-demo",
+	"version": "0.0.1",
+	"description": "",
+	"dependencies": {
+		"console-stamp": "^3.0.3",
+		"dotenv": "^10.0.0",
+		"socket.io": "^4.4.0"
+	}
+}
