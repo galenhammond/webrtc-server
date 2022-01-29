@@ -23,9 +23,8 @@ const io = new Server(server, {
   transports: ["websocket", "polling"],
   allowEIO3: true,
   cors: {
-    origin: "*",
+    origin: "https://mumbl-staging.herokuapp.com",
     methods: ["GET", "POST"],
-    credentials: true,
   },
 });
 const PORT = process.env.PORT || 3001;
