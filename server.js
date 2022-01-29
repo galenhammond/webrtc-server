@@ -9,8 +9,8 @@ const { Server } = require("socket.io");
 const prompts = require("./utils/prompts");
 
 const options = {
-  key: fs.readFileSync("./certificates/example.com+5-key.pem"),
-  cert: fs.readFileSync("./certificates/example.com+5.pem"),
+  //key: fs.readFileSync("./certificates/example.com+5-key.pem"),
+  //cert: fs.readFileSync("./certificates/example.com+5.pem"),
   requestCert: false,
   rejectUnauthorized: false,
 };
