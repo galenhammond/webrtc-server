@@ -3,30 +3,8 @@ require("console-stamp")(console, "HH:MM:ss.l");
 const { assert } = require("console");
 const express = require("express");
 const fs = require("fs");
-const cors = require("cors");
 const app = express();
 
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-
-  // Add this
-  if (req.method === "OPTIONS") {
-    res.header(
-      "Access-Control-Allow-Methods",
-      "PUT, POST, PATCH, DELETE, OPTIONS"
-    );
-    res.header("Access-Control-Max-Age", 120);
-    return res.status(200).json({});
-  }
-
-  next();
-});
-
-app.use(cors());
 const { createServer } = require("https");
 const { Server } = require("socket.io");
 const prompts = require("./utils/prompts");
@@ -43,10 +21,7 @@ const server = createServer(options, app);
 const io = new Server(server, {
   transports: ["websocket", "polling"],
   allowEIO3: true,
-  cors: {
-    origin: "https://mumbl-staging.herokuapp.com",
-    methods: ["GET", "POST"],
-  },
+  cors: true,
 });
 const PORT = process.env.PORT || 3001;
 
