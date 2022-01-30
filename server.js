@@ -22,7 +22,7 @@ const io = new Server(server, {
   transports: ["websocket", "polling"],
   allowEIO3: true,
   cors: {
-    origin: "*",
+    origin: "*:*",
     methods: ["GET", "POST"],
     allowedHeaders: ["content-type"],
     pingTimeout: 7000,
