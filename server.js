@@ -21,7 +21,6 @@ const server = createServer(options, app);
 const io = new Server(server, {
   transports: ["websocket", "polling"],
   allowEIO3: true,
-  cors: false,
 });
 const PORT = process.env.PORT || 3001;
 
