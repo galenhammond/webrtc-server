@@ -5,7 +5,7 @@ const express = require("express");
 const fs = require("fs");
 const cors = require("cors");
 const app = express();
-const { createServer } = require("https");
+const { createServer } = require("http");
 const { Server } = require("socket.io");
 const prompts = require("./utils/prompts");
 
