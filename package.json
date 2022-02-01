@@ -4,6 +4,7 @@
 	"description": "",
 	"dependencies": {
 		"console-stamp": "^3.0.3",
+		"cors": "^2.8.5",
 		"dotenv": "^10.0.0",
 		"express": "^4.17.2",
 		"socket.io": "^4.4.0"
