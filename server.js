@@ -4,7 +4,6 @@ const { assert } = require("console");
 const express = require("express");
 const fs = require("fs");
 const app = express();
-
 const { createServer } = require("https");
 const { Server } = require("socket.io");
 const prompts = require("./utils/prompts");
@@ -22,14 +21,11 @@ const io = new Server(server, {
   transports: ["websocket", "polling"],
   allowEIO3: true,
   cors: {
-    origin: "*:*",
+    origin: "*",
     methods: ["GET", "POST"],
-    allowedHeaders: ["content-type"],
-    pingTimeout: 7000,
-    pingInterval: 3000,
   },
 });
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 443;
 
 var queue = [];
 var rooms = {};
