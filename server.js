@@ -5,7 +5,6 @@ const express = require("express");
 const fs = require("fs");
 const cors = require("cors");
 const app = express();
-app.use(cors());
 const { createServer } = require("https");
 const { Server } = require("socket.io");
 const prompts = require("./utils/prompts");
@@ -22,10 +21,10 @@ const server = createServer(options, app);
 const io = new Server(server, {
   transports: ["websocket", "polling"],
   allowEIO3: true,
-  /* cors: {
+  cors: {
     origin: "*",
     methods: ["GET", "POST"],
-  }, */
+  },
 });
 const PORT = process.env.PORT || 443;
 
